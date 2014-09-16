@@ -1,0 +1,25 @@
+ _________________________________________
+/ The requested resource is no longer     \
+| available at this location. No          |
+| forwarding address is known.            |
+|                                         |
+| The request should not be repeated:     |
+| this condition is permanent. You should |
+\ remove any references to this URI.      /
+ -----------------------------------------
+\                             .       .
+ \                           / `.   .' " 
+  \                  .---.  <    > <    >  .---.
+   \                 |    \  \ - ~ ~ - /  /    |
+         _____          ..-~             ~-..-~
+        |     |   \~~~\.'                    `./~~~/
+       ---------   \__/                        \__/
+      .'  O    \     /               /       \  " 
+     (_____,    `._.'               |         }  \/~~~/
+      `----.          /       }     |        /    \__/
+            `-.      |       /      |       /      `. ,~~|
+                ~-.__|      /_ - ~ ^|      /- _      `..-'   
+                     |     /        |     /     ~-.     `-. _  _  _
+                     |_____|        |_____|         ~ - . _ _ _ _ _>
+
+                                                          410 Gone

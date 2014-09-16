@@ -1,0 +1,8 @@
+HTTP/1.1 400 Bad Request
+------------------------
+
+You have requested a resource that cannot exist.
+This URI is not a valid paste identifier.
+
+Check your spelling and try again with the new URI.
+You should not repeat the request without modifications.

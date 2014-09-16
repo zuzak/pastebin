@@ -1,0 +1,5 @@
+HTTP/1.1 404 File Not Found
+---------------------------
+
+Nothing matching the Request-URI has been found.
+Check your spelling and try again.
