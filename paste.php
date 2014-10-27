@@ -18,13 +18,14 @@ if ( isset( $_POST[ 'paste' ] ) ) {
 		die( 'Unable to save an empty paste.' );
 	}
 	$fp = null;
+	$key = null;
 	while( !$fp ) {
 		$key = keygen();
 		if ( not_stored( $key ) ) {
 			$fp = fopen( './pastes/' . $key, 'x' );
 		}
 	}
-	if ( $fp && $key ) {
+	if ( $fp ) {
 		fwrite( $fp, $_POST['paste'] );
 		fclose( $fp );
 
