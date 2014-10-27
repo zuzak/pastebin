@@ -1,5 +1,5 @@
 <?php
-$query = substr( $_SERVER[ 'REQUEST_URI' ], 5 );
+$query = substr( filter_input( INPUT_SERVER, 'REQUEST_URI' ), 5 );
 $query = explode( '.', $query );
 $slug = $query[0];
 $extension = $query[1];

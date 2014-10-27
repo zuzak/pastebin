@@ -1,5 +1,5 @@
 <?php
-$query = $_SERVER[ 'REQUEST_URI' ];
+$query = filter_input( INPUT_SERVER, 'REQUEST_URI' );
 $query = explode( '.', $query );
 $slug = $query[0];
 if ( count( $query ) > 1 ) {

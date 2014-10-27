@@ -47,13 +47,13 @@ if ( $paste ) {
 			// filter_var( $paste, FILTER_VALIDATE_URL
 			if ( filter_var( $paste, FILTER_VALIDATE_URL ) ) {
 				$msg = "New short URL #$x created at ";
-				$msg .= isset( $_SERVER[ 'HTTPS' ] ) ? 'https://' : 'http://';
-				$msg .= $_SERVER['SERVER_NAME'] . "/url/$key (";
+				$msg .= filter_input( INPUT_SERVER, 'HTTPS' ) ? 'https://' : 'http://';
+				$msg .= filter_input( INPUT_SERVER, 'SERVER_NAME' ) . "/url/$key (";
 				$msg .= parse_url( $paste, PHP_URL_HOST ) . ")";
 			} else {
-				$msg = "Created paste #$x for " . $_SERVER['REMOTE_ADDR'] . " at ";
-				$msg .= isset( $_SERVER[ 'HTTPS' ] ) ? 'https://' : 'http://';
-				$msg .= $_SERVER['SERVER_NAME'] . "/$key";
+				$msg = "Created paste #$x for " . filter_input( INPUT_SERVER, 'REMOTE_ADDR' ) . " at ";
+				$msg .= filter_input( INPUT_SERVER, 'HTTPS' ) ? 'https://' : 'http://';
+				$msg .= filter_input( INPUT_SERVER, 'SERVER_NAME' ) . "/$key";
 				$tmp = substr( $paste, 0, 150 );
 				//$tmp = str_replace( array( "\r\n", "\r", "\n" ), '↵', $tmp );
 				$tmp = explode("\r\n",$tmp)[0];
