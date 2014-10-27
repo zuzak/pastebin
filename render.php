@@ -48,10 +48,11 @@ function error( $code, $debug = null ) {
 	}
 	header( 'Content-Type: text/plain' );
 	$output = file_get_contents( "errors/$code.txt" );
+	echo $output;
 	if ( $debug ) {
 		$err = "Debug info: $debug";
 		$err = "\n\n\n" . str_repeat( '-', strlen( $err ) ) . "\n$err";
+		echo $err;
 	}
-	echo $output . $err;
 }
 ?>
