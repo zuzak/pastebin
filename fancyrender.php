@@ -1,4 +1,8 @@
-<?php require 'extensions.php'; ?>
+<?php require 'extensions.php';
+if ( getExtension( $extension ) == 'markdown' ) {
+	require 'markdownrender.php';
+	die;
+} ?>
 <!DOCTYPE html>
 <html>
 <head>
