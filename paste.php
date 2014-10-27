@@ -24,7 +24,7 @@ if ( isset( $_POST[ 'paste' ] ) ) {
 			$fp = fopen( './pastes/' . $key, 'x' );
 		}
 	}
-	if ( $fp ) {
+	if ( $fp && $key ) {
 		fwrite( $fp, $_POST['paste'] );
 		fclose( $fp );
 
