@@ -20,4 +20,3 @@ if ( !$extension ) {
 } else {
 	require 'fancyrender.php';
 }
-?>

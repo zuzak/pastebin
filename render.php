@@ -55,4 +55,3 @@ function error( $code, $debug = null ) {
 		echo $err;
 	}
 }
-?>

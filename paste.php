@@ -79,4 +79,3 @@ if ( $paste ) {
 		die( "Something went wrong when saving your document.\n\n(" . $err['message'] . ")" );
 	}
 }
-?>

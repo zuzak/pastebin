@@ -13,4 +13,3 @@ if ( filter_input( INPUT_POST, 'paste' ) !== null ) {
 } else {
 	require 'prompt.php';
 }
-?>
