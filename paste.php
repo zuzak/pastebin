@@ -38,7 +38,7 @@ if ( $paste ) {
 		fwrite( $fp2, "\n" . $key );
 		fclose( $fp2 );
 
-		if ( !$_POST[ 'unlisted' ] ) {
+		if ( filter_input( INPUT_POST,  'unlisted' ) ) {
 			$dir = new DirectoryIterator( "pastes" );
 			$x = 0;
 			foreach ( $dir as $file ){
