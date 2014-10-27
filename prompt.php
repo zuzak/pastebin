@@ -13,14 +13,14 @@ if ( !isset( $_SESSION ) ) {
 	<title>Pastebin</title>
 	<style>
 		html{height:100%}body,html{margin:0;padding:0}body,form{height:100%}
-		textarea{background:#202020;color:#fff;padding-left:2em;padding-top:
+		textarea{background:#3182bd;color:#deebf7;padding-left:2em;padding-top:
 		2em;width:100%;height:100%;outline:0;border:0;font-size:120%;
 		font-family:monospace}button{padding:1em 2em;font-size:140%;
 		border-bottom-left-radius:10px;border:1px solid #ccc;
-		background-color:#363636;color:#fff}button:focus,button:hover{
+		background-color:#9ecae1;color:#3182bd}button:focus,button:hover{
 		box-shadow:0 1px rgba(0,0,0,.1),inset 0 -3px rgba(0,0,0,.2)}.controls
-		{position:fixed;top:0;right:0;font-family:sans-serif;}.controls div{background-color:#444;
-		margin-left:1em;border-left:1px solid #ccc;color:#ccc;}
+		{position:fixed;top:0;right:0;font-family:sans-serif;}.controls div{background-color:#9ecae1;
+		margin-left:1em;border-left:1px solid #ccc;color:#deebf7}
 		.controls div:last-child{border-bottom-left-radius:3px;border-bottom:1px solid #ccc}
 	</style>
 </head>
@@ -28,10 +28,12 @@ if ( !isset( $_SESSION ) ) {
 	<form method="POST">
 		<div class="controls">
 			<button value="save" title="Click here to save the paste.">Save</button>
+<!--
 			<div>
 				<input type="checkbox" id="unlisted" name="unlisted" />
 				<label for="unlisted" title="Check this box to suppress the paste creation from being announced in any feeds.">Suppress</label>
 			</div>
+-->
 		</div>
 		<textarea name="paste" placeholder="Start typing here!"></textarea>
 	</form>
