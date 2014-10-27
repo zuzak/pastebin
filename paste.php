@@ -12,8 +12,9 @@ function keygen() {
 	return $str;
 }
 
-if ( isset( $_POST[ 'paste' ] ) ) {
-	if ( strlen( $_POST[ 'paste' ] ) == 0 ) {
+$paste = filter_input( INPUT_POST, 'paste' );
+if ( $paste ) {
+	if ( strlen( $paste ) == 0 ) {
 		header( 'HTTP/1.1 400 Bad Request' );
 		die( 'Unable to save an empty paste.' );
 	}
@@ -26,7 +27,7 @@ if ( isset( $_POST[ 'paste' ] ) ) {
 		}
 	}
 	if ( $fp ) {
-		fwrite( $fp, $_POST['paste'] );
+		fwrite( $fp, $paste );
 		fclose( $fp );
 
 		header( 'HTTP/1.1 302 Found' );
@@ -44,21 +45,21 @@ if ( isset( $_POST[ 'paste' ] ) ) {
 				$x += ( $file->isFile() ) ? 1 : 0;
 			};
 			// filter_var( $paste, FILTER_VALIDATE_URL
-			if ( filter_var( $_POST['paste'], FILTER_VALIDATE_URL ) ) {
+			if ( filter_var( $paste, FILTER_VALIDATE_URL ) ) {
 				$msg = "New short URL #$x created at ";
 				$msg .= $_SERVER[ 'HTTPS' ] ? 'https://' : 'http://';
 				$msg .= $_SERVER['SERVER_NAME'] . "/url/$key (";
-				$msg .= parse_url( $_POST['paste'], PHP_URL_HOST ) . ")";
+				$msg .= parse_url( $paste, PHP_URL_HOST ) . ")";
 			} else {
 				$msg = "Created paste #$x for " . $_SERVER['REMOTE_ADDR'] . " at ";
 				$msg .= $_SERVER[ 'HTTPS' ] ? 'https://' : 'http://';
 				$msg .= $_SERVER['SERVER_NAME'] . "/$key";
-				$tmp = substr( $_POST[ 'paste' ], 0, 150 );
+				$tmp = substr( $paste, 0, 150 );
 				//$tmp = str_replace( array( "\r\n", "\r", "\n" ), '↵', $tmp );
 				$tmp = explode("\r\n",$tmp)[0];
 				$msg .= " → $tmp";
 				$tmp = null;
-				if ( strlen( $_POST[ 'paste' ] ) > 150 ) {
+				if ( strlen( $paste ) > 150 ) {
 					$msg .= "…";
 				}
 			}

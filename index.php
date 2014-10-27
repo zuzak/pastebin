@@ -2,7 +2,7 @@
 define( 'PASTEBIN', 1 );
 require 'vendor/autoload.php';
 require 'library.php';
-if ( isset( $_POST[ 'paste' ] ) ) {
+if ( filter_input( INPUT_POST, 'paste' ) !== null ) {
 	require 'paste.php';
 } else if ( $_SERVER[ 'REQUEST_URI' ] !== '/' ) {
 	if ( substr( $_SERVER[ 'REQUEST_URI' ], 0, 4 ) == '/url' ) {
