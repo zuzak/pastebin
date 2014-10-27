@@ -1,7 +1,6 @@
 <?php
 function not_stored( $str ) {
 	$str = escapeshellarg( $str );
-	$ret = -1;
 	$contents = file_get_contents( 'pastes.log' );
 	$pattern = preg_quote( $str, '/' );
 	$pattern = "/^.*$pattern.*\$/m";
