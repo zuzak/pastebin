@@ -1,5 +1,6 @@
 <?php
 define( 'PASTEBIN', 1 );
+require 'vendor/autoload.php';
 require 'library.php';
 if ( isset( $_POST[ 'paste' ] ) ) {
 	require 'paste.php';
