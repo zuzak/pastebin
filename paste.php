@@ -64,7 +64,7 @@ if ( $paste ) {
 				}
 			}
 			$socket = socket_create( AF_INET, SOCK_DGRAM, SOL_UDP );
-			if ( $_SERVER['SERVER_NAME'] === 'paste.oaosidl.org' ) {
+			if ( filter_input( INPUT_SERVER, 'SERVER_NAME' ) === 'paste.oaosidl.org' ) {
 				$port = 41340;
 			} else {
 				$port = 41337;
