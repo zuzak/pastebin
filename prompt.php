@@ -3,7 +3,7 @@ if ( !defined( 'PASTEBIN' ) ) {
 	header('HTTP/1.1 403 Forbidden');
 	die();
 }
-if ( !isset( $_SESSION ) ) {
+if ( session_id() === "" ) ) {
 	session_start();
 }
 ?>
